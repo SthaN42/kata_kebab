@@ -3,8 +3,7 @@ package fr.unilim.iut;
 import java.util.List;
 
 import fr.unilim.iut.ingredients.Ingredient;
-import fr.unilim.iut.visiteur.VisiteurPescetarien;
-import fr.unilim.iut.visiteur.VisiteurVegetarien;
+import fr.unilim.iut.visiteur.*;
 
 public class Kebab {
 	
@@ -32,6 +31,14 @@ public class Kebab {
 			ingredient.accepter(visiteurPescetarien);
 		}
 		return visiteurPescetarien.estPescetarien();
+	}
+
+	public boolean estSansGluten() {
+		VisiteurSansGluten visiteurSansGluten = new VisiteurSansGluten();
+		for (Ingredient ingredient : ingredients) {
+			ingredient.accepter(visiteurSansGluten);
+		}
+		return visiteurSansGluten.estSansGluten();
 	}
 
 }

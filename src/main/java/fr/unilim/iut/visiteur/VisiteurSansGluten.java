@@ -11,54 +11,54 @@ import fr.unilim.iut.ingredients.Sauce;
 import fr.unilim.iut.ingredients.Thon;
 import fr.unilim.iut.ingredients.Tomate;
 
-public class VisiteurPescetarien implements VisiteurRegime {
-
-	private boolean estPescetarien = true;
+public class VisiteurSansGluten implements VisiteurRegime {
+	
+	private boolean estSansGluten = true;
 
 	public void visiter(Agneau agneau) {
-		estPescetarien = false;
+		// est sans gluten
 	}
 
 	public void visiter(Crevette crevette) {
-		// est pescetarien
+		// est sans gluten
 	}
 
 	public void visiter(Fromage fromage) {
-		// est pescetarien
+		// est sans gluten
 	}
 
 	public void visiter(Oignon oignon) {
-		// est pescetarien
+		// est sans gluten
 	}
 
 	public void visiter(Pain Pain) {
-		// est pescetarien
+		estSansGluten = false;
+
 	}
 
 	public void visiter(Salade salade) {
-		// est pescetarien
+		// TODO Auto-generated method stub
 
 	}
 
 	public void visiter(Sauce Sauce) {
-		// est pescetarien
+		// est sans gluten
 	}
 
 	public void visiter(Thon thon) {
-		// est pescetarien
+		// est sans gluten
 	}
 
 	public void visiter(Tomate tomate) {
-		// est pescetarien
-
-	}
-
-	public boolean estPescetarien() {
-		return this.estPescetarien;
+		// est sans gluten
 	}
 
 	public void visiter(GaletteDeSarrasin galetteDeSarrasin) {
-		// est pescetarien
+		// est sans gluten
+	}
+
+	public boolean estSansGluten() {
+		return this.estSansGluten;
 	}
 
 }

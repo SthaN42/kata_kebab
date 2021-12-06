@@ -46,4 +46,8 @@ public class VisiteurVegetarien implements VisiteurRegime {
 		return this.estVegetarien;
 	}
 
+	public void visiter(GaletteDeSarrasin galetteDeSarrasin) {
+		// est vegetarien
+	}
+
 }

@@ -12,4 +12,5 @@ public interface VisiteurRegime {
 	void visiter(Sauce Sauce);
 	void visiter(Thon thon);
 	void visiter(Tomate tomate);
+	void visiter(GaletteDeSarrasin galetteDeSarrasin);
 }

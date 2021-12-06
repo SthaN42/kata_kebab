@@ -21,11 +21,13 @@ public class KebabTest {
 	private static final Thon THON = new Thon();
 	private static final Fromage FROMAGE = new Fromage();
 	private static final Crevette CREVETTE = new Crevette();
+	private static final GaletteDeSarrasin GALETTE= new GaletteDeSarrasin();
 	
 	Kebab kebabAgneau;
 	Kebab kebabVegetarien;
 	Kebab kebabThon;
 	Kebab kebabCrevette;
+	Kebab kebabGalette;
 
 	@Before
 	public void confectionnerLesKebabs() {
@@ -64,6 +66,14 @@ public class KebabTest {
 				.avec(PAIN)
 				.avec(SAUCE)
 				.preparerLeKebab();
+		
+		kebabGalette = unKebab()
+				.avec(SALADE)
+				.avec(TOMATE)
+				.avec(OIGNON)
+				.avec(GALETTE)
+				.avec(SAUCE)
+				.preparerLeKebab();
 	}
 
 	@Test
@@ -79,6 +89,9 @@ public class KebabTest {
 		
 		assertThat(kebabCrevette.listerLesIngredients()).containsExactly(
 				CREVETTE, SALADE, TOMATE, OIGNON, PAIN, SAUCE);
+		
+		assertThat(kebabGalette.listerLesIngredients()).containsExactly(
+				SALADE, TOMATE, OIGNON, GALETTE, SAUCE);
 	}
 
 	@Test
@@ -101,6 +114,19 @@ public class KebabTest {
 		assertTrue(kebabCrevette.estPescetarien());
 		
 		assertTrue(kebabThon.estPescetarien());
+	}
+	
+	@Test
+	public void le_kebab_est_sans_gluten() {
+		assertFalse(kebabAgneau.estSansGluten());
+		
+		assertFalse(kebabVegetarien.estSansGluten());
+		
+		assertFalse(kebabCrevette.estSansGluten());
+		
+		assertFalse(kebabThon.estSansGluten());
+		
+		assertTrue(kebabGalette.estSansGluten());
 	}
 
 }
