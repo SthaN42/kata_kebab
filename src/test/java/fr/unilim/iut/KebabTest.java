@@ -80,6 +80,27 @@ public class KebabTest {
 		assertThat(kebabCrevette.listerLesIngredients()).containsExactly(
 				CREVETTE, SALADE, TOMATE, OIGNON, PAIN, SAUCE);
 	}
+
+	@Test
+	public void le_kebab_est_vegetarien() {
+		assertFalse(kebabAgneau.estVegetarien());
+		
+		assertTrue(kebabVegetarien.estVegetarien());
+		
+		assertFalse(kebabCrevette.estVegetarien());
+		
+		assertFalse(kebabThon.estVegetarien());
+	}
 	
+	@Test
+	public void le_kebab_est_pescetarien() {
+		assertFalse(kebabAgneau.estPescetarien());
+		
+		assertTrue(kebabVegetarien.estPescetarien());
+		
+		assertTrue(kebabCrevette.estPescetarien());
+		
+		assertTrue(kebabThon.estPescetarien());
+	}
 
 }

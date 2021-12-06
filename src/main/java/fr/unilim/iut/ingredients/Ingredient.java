@@ -1,5 +1,7 @@
 package fr.unilim.iut.ingredients;
 
-public class Ingredient {
-	
+import fr.unilim.iut.visiteur.VisiteurRegime;
+
+public abstract class Ingredient {
+	public abstract void accepter(VisiteurRegime visiteur);
 }

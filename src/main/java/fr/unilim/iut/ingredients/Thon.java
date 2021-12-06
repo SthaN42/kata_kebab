@@ -1,5 +1,10 @@
 package fr.unilim.iut.ingredients;
 
-public class Thon extends Ingredient {
+import fr.unilim.iut.visiteur.VisiteurRegime;
 
+public class Thon extends Ingredient {
+	@Override
+	public void accepter(VisiteurRegime visiteur) {
+		visiteur.visiter(this);
+	}
 }
